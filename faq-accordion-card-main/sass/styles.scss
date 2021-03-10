@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 14px;
+}
+// TEXT
+$Very_dark_desaturated_blue: hsl(238, 29%, 16%);
+$Soft_red: hsl(14, 88%, 65%);
+
+// GRADIANT
+$Soft_violet: hsl(273, 75%, 66%);
+$Soft_blue: hsl(240, 73%, 65%);
+
+// TEXT
+$Very_dark_grayish_blue: hsl(237, 12%, 33%);
+$Dark_grayish_blue: hsl(240, 6%, 50%);
+// DIVIDERS
+$Light_grayish_blue: hsl(240, 5%, 91%);
+
+body {
+    background-image: linear-gradient(to bottom, $Soft_violet, $Soft_blue);
+}
+.content {
+    position: relative;
+    margin: 0 auto;
+    max-width: 375px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media only screen and (min-width: 700px) {
+        max-width: 1440px;
+    }
+}
+
+.card {
+   
+    position: relative;
+    width:90%;
+    height: 530px;
+    background-color: #fff;
+    
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba($Very_dark_grayish_blue, 0.5);
+
+    @media only screen and (min-width: 700px) {
+               
+        width: 900px;
+        height: 480px;
+        display: flex;
+    }
+    &-top {
+        
+        display: none;
+        width: 100%;
+        @media only screen and (min-width: 700px) {
+            display: block;
+            width: 50%;
+            background-image: url("../images/bg-pattern-desktop.svg"),
+                url("../images/illustration-woman-online-desktop.svg");
+            background-repeat: no-repeat, no-repeat;
+            // background-size: contain,contain;
+            background-position: -590px -300px, -70px 60px;
+        }
+    }
+
+    &-bottom {
+        
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+        @media only screen and (min-width: 700px) {
+            padding: 50px 30px;
+            
+            width: 50%;
+        }
+
+        h1 {
+            width: 100%;
+            margin-top: 100px;
+            text-align: center;
+            font-size: 2em;
+            color: $Very_dark_desaturated_blue;
+            @media only screen and (min-width: 700px) {
+                text-align: start;
+                margin: 0;
+            }
+        }
+        .questions {
+            width: 100%;
+            margin-top: 20px;
+            .item{
+                width: 100%;
+                display: block;
+               
+                
+                h2 {
+                    
+                    width: 100%;
+                    padding: 15px 0;
+                    font-weight: 400;
+                    color: $Very_dark_grayish_blue;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    transition: 0.2s linear;
+                    cursor: pointer;
+                    &:hover {
+                        color: $Soft_red;
+                    }
+    
+                    &.active{
+                        color:Very_dark_desaturated_blue ;
+                        font-weight: 700;
+                    }
+                    .arrow_down {
+                        transition: transform 0.3s ease-in;
+                        &.active {
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+    
+                .response {
+                     max-height: 0;
+                    overflow: hidden;
+                    
+                    padding:0;
+                    color: $Dark_grayish_blue;
+                    font-size: 0.9em;
+                    transition: 0.3s ease-in;
+                    
+                    &.active {
+                        display: flex;
+                        max-height: 50px;
+                        margin:15px 0;
+                        
+                    }
+                }
+            }
+
+        }
+    }
+    hr {
+        width: 100%;
+        border: 0;
+        height: 1px;
+
+        background-color: $Light_grayish_blue;
+    }
+}
+
+.img-mobile {
+    position: absolute;
+    width: 266px;
+    top: -110px;
+    left: calc(50% - (266px / 2));
+    filter: drop-shadow(0px 30px 0px rgba($Light_grayish_blue, 1));
+    @media only screen and (min-width: 700px) {
+        display: none;
+    }
+}
+.img-box {
+    display: none;
+    @media only screen and (min-width: 700px) {
+        position: absolute;
+        display: block;
+        left: -90px;
+        top: 200px;
+    }
+}
+
+.attribution {
+    position: fixed;
+    bottom: 0;
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
